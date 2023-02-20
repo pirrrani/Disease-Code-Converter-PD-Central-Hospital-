@@ -22,7 +22,6 @@ try:
     max_row_main = main_file_sheet.max_row
     max_row_trans = main_file_sheet.max_row
     max_row_finish = finish_file_sheet.max_row
-    error = 0
     
     for row in range(2, max_row_main+1):
         find_row = 2
@@ -216,9 +215,6 @@ try:
     
     
     finish_file.save('Результат.xlsx')
-    
-    if error == 1:
-        print('Есть ошибки преобразования. Откройте файл Файл_с_преобразованными_кодами.xlsx и файл transfile.xlsx. Убедитесь,\nчто строки с кодами совпадают')
 
 except Exception as e:
     print(e)
