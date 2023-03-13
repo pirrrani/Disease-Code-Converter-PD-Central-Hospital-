@@ -29,7 +29,7 @@ try:
             find_row += 1
         main_file_sheet.cell(row=row, column=1).value = trans_file_sheet.cell(row=find_row, column=2).value
     main_file.save('Файл_с_преобразованными_кодами.xlsx')
-    
+
     intermediate_file_path = str('Файл_с_преобразованными_кодами.xlsx')
     intermediate_file = openpyxl.load_workbook(intermediate_file_path.strip())
     intermediate_file_sheet = intermediate_file.active
@@ -41,175 +41,267 @@ try:
         match desired_value:
             case '17.99;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '17.0':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '17.0') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '17.0':
                         q += 1
             case '15.99;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '15.0':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '15.0') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '15.0':
                         q += 1
             case '15.1;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '15..1':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '15..1') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '15..1':
                         q += 1
             case '15.2;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '15..2':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '15..2') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '15..2':
                         q += 1
             case '15.3;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '15..3':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '15..3') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '15..3':
                         q += 1
             case '15.8.2;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '15..8.2':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '15..8.2') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '15..8.2':
                         q += 1
             case '15.8.1;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '15..8.1':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '15..8.1') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '15..8.1':
                         q += 1
             case '15.7;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '15..7':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '15..7') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '17..7':
                         q += 1
             case '15.5;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '15..5':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '15..5') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '15..5':
                         q += 1
             case '15.8;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '15..8':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '15..8') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '15..8':
                         q += 1
             case '17.1;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '17..1':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '17..1') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '17..1':
                         q += 1
             case '5.99;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '5.0':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '5.0') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '5.0':
                         q += 1
             case '5.2;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '5..2':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '5..2') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '5..2':
                         q += 1
             case '6.99;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '6.0':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '6.0') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '6.0':
                         q += 1
             case '6.2;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '6..2':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '6..2') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '6..2':
                         q += 1
             case '7.99;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '7.0':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '7.0') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '7.0':
                         q += 1
             case '8.1;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '8..1':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '8..1') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '8..1':
                         q += 1
             case '8.2;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '8..2':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '8..2') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '8..2':
                         q += 1
             case '8.1.2;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '8..1.2':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '8..1.2') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '8..1.2':
                         q += 1
             case '8.1.3;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '8..1.3':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '8..1.3') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '8..1.3':
                         q += 1
             case '9.5;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '9..5':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '9..5') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '9..5':
                         q += 1
             case '9.2;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '9..2':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '9..2') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '9..2':
                         q += 1
             case '9.6.2;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '9..6.2':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '9..6.2') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '9..6.2':
                         q += 1
             case '9.7;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '9..7':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '9..7') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '9..7':
                         q += 1
             case '9.6.1;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '9..6.1':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '9..6.1') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '9..6.1':
                         q += 1
             case '13.1;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '13..1':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '13..1') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '13..1':
                         q += 1
             case '16.99;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '16.0':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '16.0') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '16.0':
                         q += 1
             case '8.99;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '8.0':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '8.0') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '8.0':
                         q += 1
             case '9.99;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '9.0':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '9.0') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '9.0':
                         q += 1
             case '13.99;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '13.0':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '13.0') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '13.0':
                         q += 1
             case '10.99;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '10.0':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '10.0') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '10.0':
                         q += 1
             case '11.1;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '11..1':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '11..1') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '11..1':
                         q += 1
             case '3.99;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '3.0':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '3.0') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '3.0':
                         q += 1
             case '11.99;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '11.0':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '11.0') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '11.0':
                         q += 1
             case '2.99;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '2.0':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '2.0') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '2.0':
                         q += 1
             case '2.1;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '2..1':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '2..1') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '2..1':
                         q += 1
             case '2.8;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '2..8':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '2..8') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '2..8':
                         q += 1
             case '5.1;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '5..1':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '5..1') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '5..1':
                         q += 1
             case '4.99;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '4.0':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '4.0') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '4.0':
                         q += 1
             case '4.1;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '4..1':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '4..1') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '4..1':
                         q += 1
             case '4.7.1;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '4..7.1':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '4..7.1') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '4..7.1':
                         q += 1
             case '10.1;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '10..1':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '10..1') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '10..1':
                         q += 1
             case '9.3;':
                 for row_two in range(2, max_row_intermediate+1):
-                    if intermediate_file_sheet.cell(row=row_two, column=1).value == '9..3':
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '9..3') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '9..3':
+                        q += 1
+            case '10;':
+                for row_two in range(2, max_row_intermediate+1):
+                    if (intermediate_file_sheet.cell(row=row_two, column=1).value == '10.0') & (intermediate_file_sheet.cell(row=row_two, column=2).value != None):
+                        q += intermediate_file_sheet.cell(row=row_two, column=2).value
+                    elif intermediate_file_sheet.cell(row=row_two, column=1).value == '10.0':
                         q += 1
         finish_file_sheet.cell(row=row_one, column=3).value = q
     
